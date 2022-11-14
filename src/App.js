@@ -1,7 +1,14 @@
 import "./App.css";
+import { DataContextProvider } from "./dataProvider";
 
-function App() {
-  return <div className="App">testing</div>;
-}
+const App = () => {
+  return (
+    <DataContextProvider>
+      <div className="App">
+        <h1>testing</h1>
+      </div>
+    </DataContextProvider>
+  );
+};
 
 export default App;
