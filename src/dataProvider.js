@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useContext, useState, useEffect, createContext } from "react";
 
 const DataContext = createContext();
 
@@ -30,4 +30,12 @@ export const DataContextProvider = ({ children }) => {
       {children}
     </DataContext.Provider>
   );
+};
+
+export const useAPI = () => {
+  const context = useContext(DataContext);
+  if (context === undefined) {
+    throw new Error("Context must be used within a Provider");
+  }
+  return context;
 };
