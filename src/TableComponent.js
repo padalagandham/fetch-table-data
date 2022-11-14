@@ -18,7 +18,7 @@ const TableComponent = () => {
       </thead>
       <tbody>
         {tableData.map((row) => (
-          <TableRow {...row} />
+          <TableRow key={row.name} {...row} />
         ))}
       </tbody>
     </table>

@@ -4,6 +4,11 @@ const DataContext = createContext();
 
 export const DataContextProvider = ({ children }) => {
   const [tableData, setTableData] = useState([]);
+  const rowChangeHandler = (name, checked) => {
+    const selectedIndex = tableData.findIndex((data) => data.name === name);
+    tableData[selectedIndex].checked = checked;
+    setTableData([...tableData]);
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,6 +30,7 @@ export const DataContextProvider = ({ children }) => {
     <DataContext.Provider
       value={{
         tableData,
+        rowChangeHandler,
       }}
     >
       {children}

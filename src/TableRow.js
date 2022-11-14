@@ -2,19 +2,23 @@ import React from "react";
 import "./TableRow.css";
 import { useAPI } from "./dataProvider";
 
-const TableRow = ({ name }) => {
-  const { tableData } = useAPI();
+const TableRow = ({ name, device, path, status, checked = false }) => {
+  const { tableData, rowChangeHandler } = useAPI();
   return (
     <tr>
       <td>
-        <label className="control1 control--checkbox1">
-          <input type="checkbox" />
+        <label>
+          <input
+            type="checkbox"
+            checked={checked}
+            onChange={(e) => rowChangeHandler(name, e.currentTarget.checked)}
+          />
         </label>
       </td>
       <td>{name}</td>
-      <td>3</td>
-      <td>4</td>
-      <td>5</td>
+      <td>{device}</td>
+      <td>{path}</td>
+      <td>{status}</td>
     </tr>
   );
 };
