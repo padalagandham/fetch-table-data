@@ -1,0 +1,7 @@
+.custom-table tbody td {
+  color: #777;
+  font-weight: 400;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-weight: 300;
+}
