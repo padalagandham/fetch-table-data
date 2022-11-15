@@ -40,7 +40,11 @@ const TopHeader = () => {
           }}
         />
       </th>
-      <th>Selected {selectRowsCount}</th>
+      <th>
+        {selectRowsCount === 0
+          ? "None Selected"
+          : `Selected ${selectRowsCount}`}
+      </th>
       <th
         onClick={() => {
           alert(getSelectedRows());
