@@ -5,3 +5,7 @@
   padding-top: 20px;
   font-weight: 300;
 }
+
+.custom-table tbody tr.active {
+  background-color: #ccc;
+}

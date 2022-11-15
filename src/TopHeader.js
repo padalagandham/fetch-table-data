@@ -8,7 +8,12 @@ export const CHECKBOX_STATES = {
 };
 
 const TopHeader = () => {
-  const { selectAllRowsHandler, selectRowsCount, selectAllState } = useAPI();
+  const {
+    selectAllRowsHandler,
+    selectRowsCount,
+    selectAllState,
+    getSelectedRows,
+  } = useAPI();
   const checkboxRef = useRef();
 
   useEffect(() => {
@@ -36,7 +41,14 @@ const TopHeader = () => {
         />
       </th>
       <th>Selected {selectRowsCount}</th>
-      <th> Download Selected</th>
+      <th
+        onClick={() => {
+          alert(getSelectedRows());
+        }}
+      >
+        {" "}
+        Download Selected
+      </th>
       <th colSpan={3}></th>
     </tr>
   );

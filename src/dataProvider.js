@@ -26,6 +26,9 @@ export const DataContextProvider = ({ children }) => {
     }
   };
 
+  const getSelectedRows = () =>
+    tableData.filter((row) => row.checked).map((row) => [row.path, row.device]);
+
   const selectAllRowsHandler = (checked) => {
     const updatedRows = tableData.map((row) => {
       row.checked = checked;
@@ -62,6 +65,7 @@ export const DataContextProvider = ({ children }) => {
         selectAllRowsHandler,
         selectRowsCount,
         selectAllState,
+        getSelectedRows,
       }}
     >
       {children}

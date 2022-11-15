@@ -5,7 +5,7 @@ import { useAPI } from "./dataProvider";
 const TableRow = ({ name, device, path, status, checked = false }) => {
   const { rowChangeHandler } = useAPI();
   return (
-    <tr>
+    <tr className={checked ? "active" : ""}>
       <td>
         <label>
           <input
