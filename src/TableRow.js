@@ -18,7 +18,10 @@ const TableRow = ({ name, device, path, status, checked = false }) => {
       <td>{name}</td>
       <td>{device}</td>
       <td>{path}</td>
-      <td>{status}</td>
+      <td>
+        {status === "available" ? <span class="circle"></span> : null}
+        {status}
+      </td>
     </tr>
   );
 };

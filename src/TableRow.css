@@ -9,3 +9,11 @@
 .custom-table tbody tr.active {
   background-color: #ccc;
 }
+
+.circle {
+  height: 15px;
+  width: 15px;
+  background-color: green;
+  border-radius: 50%;
+  float: left;
+}
