@@ -2,12 +2,14 @@ import React from "react";
 import "./TableComponent.css";
 import TableRow from "./TableRow";
 import { useAPI } from "./dataProvider";
+import TopHeader from "./TopHeader";
 
 const TableComponent = () => {
   const { tableData } = useAPI();
   return (
     <table className="table custom-table">
       <thead>
+        <TopHeader />
         <tr>
           <th></th>
           <th>Name</th>

@@ -3,7 +3,7 @@ import "./TableRow.css";
 import { useAPI } from "./dataProvider";
 
 const TableRow = ({ name, device, path, status, checked = false }) => {
-  const { tableData, rowChangeHandler } = useAPI();
+  const { rowChangeHandler } = useAPI();
   return (
     <tr>
       <td>
